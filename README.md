@@ -16,4 +16,6 @@ Correr : npm run dev
 
 Descarga libreria : npm i next-auth
 
-Ruta : http://localhost:3000/api/auth/signin
+Ruta login : http://localhost:3000/api/auth/signin
+
+Ruta logout : http://localhost:3000/api/auth/signout
