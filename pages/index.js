@@ -13,11 +13,16 @@ export default function Home() {
       <main className={styles.main}>
         
         <h1 className={styles.title}>
-          Bienvenidos ☺ developers&rarr;<a href="http://localhost:3000/api/auth/signin">Comenzar</a>
+          Welcome developers !!
         </h1>
 
-      </main>
+        <div className={styles.grid}>
+          <a href="http://localhost:3000/api/auth/signin" className={styles.card}>
+            <h2>Start ☺</h2>
+          </a>
+        </div> 
 
+      </main>
       
     </div>
   )
