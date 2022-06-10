@@ -10,6 +10,10 @@ Next.Js https://nextjs.org/
 
 ## Ayuda memoria 
 
-npx create-next-app
+Crear app : npx create-next-app
 
-npm run dev
+Correr : npm run dev
+
+Descarga libreria : npm i next-auth
+
+Ruta : http://localhost:3000/api/auth/signin
