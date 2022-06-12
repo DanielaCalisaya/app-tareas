@@ -1,7 +1,7 @@
-import Head from 'next/head'
+import Head from '../node_modules/next/head' 
 import styles from '../styles/Home.module.css'
 
-export default function Home() {
+const Home = () => {
   return (
     <div className={styles.container}>
       <Head>
@@ -15,10 +15,19 @@ export default function Home() {
         <h1 className={styles.title}>
           Welcome developers !!
         </h1>
+        <br/>
+        <br/>
+        <br/>
 
         <div className={styles.grid}>
           <a href="http://localhost:3000/api/auth/signin" className={styles.card}>
             <h2>Start ☺</h2>
+          </a>
+        </div> 
+        
+        <div className={styles.grid}>
+          <a href="/notes" className={styles.card}>
+            <h2>Crear una nota</h2>
           </a>
         </div> 
 
@@ -27,6 +36,8 @@ export default function Home() {
     </div>
   )
 }
+
+export default Home;
 
 /* 
 <div className={styles.grid}>
