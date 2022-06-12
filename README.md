@@ -2,11 +2,25 @@
 
 ## Herramientas
 
+- Instalación Tailwind Css intregado a NextJs:
+
+npm install -D tailwindcss postcss autoprefixer
+
+npx tailwindcss init -p
+
+Agregue las rutas de acceso a todos los archivos de plantilla del archivo.tailwind.config.js :
+
+ content: [
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
 ## Documentación
 
 Yarn https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable
 
 Next.Js https://nextjs.org/
+
+https://tailwindcss.com/
 
 ## Ayuda memoria 
 
