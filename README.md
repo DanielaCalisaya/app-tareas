@@ -19,7 +19,11 @@ Agregue las rutas de acceso a todos los archivos de plantilla del archivo.tailwi
 @tailwind components;
 @tailwind utilities;
 
+ctrl + k -> abre el buscador de tailwind
+
 - React icons
+
+npm install react-icons --save
 
 ## Documentación
 
