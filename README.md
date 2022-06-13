@@ -14,6 +14,13 @@ Agregue las rutas de acceso a todos los archivos de plantilla del archivo.tailwi
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+- React icons
+
 ## Documentación
 
 Yarn https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable
