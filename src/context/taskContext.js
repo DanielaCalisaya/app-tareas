@@ -1,14 +1,28 @@
 import { createContext, useContext, useState } from "react";
+import { v4 as uuid } from 'uuid'; /* módulo que genera id único */
 
 export const TaskContext = createContext();
 
 export const useTasks = () => useContext(TaskContext)
 
+export const TasksProvider = ({children}) => {
 
-export const TasksProvider = ({children}) => { /* Cualquier componente hijo que me pasen va a poder acceder a Provider */
+const [tasks, setTasks] = useState([
+    {id:'1', title:'first task', description: 'some task'},
+    {id:'2', title:'first task', description: 'some task'}   
+])
+
+/* creación de tarea */
+const createTask = (title, description) => {
+    setTasks([...tasks, {title, description, id: uuid()}
+    ]) 
+}
     
-const [tasks, setTasks] = useState([{id:'1', title:'first task', description: 'some task'}]); /* creando una especie de variable en donde pueda guardar los datos */
+    return ( /* pasa las tareas y crea...  */
+        <TaskContext.Provider 
+            value={{tasks, createTask}}>
+            {children}
+        </TaskContext.Provider>
 
-    return <TaskContext.Provider value={{tasks}}>{children}</TaskContext.Provider>
-
+    )
 }
