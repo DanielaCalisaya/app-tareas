@@ -3,7 +3,7 @@ import Navbar from './Navbar'
 const Layout = ({children}) => {
 
   return (
-    <div className="h-screen bg-gray-900 text-white">
+    <div className="h-screen bg-[#56425A] text-white">
       <Navbar/>
       <hr/>
 

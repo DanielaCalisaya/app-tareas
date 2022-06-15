@@ -22,7 +22,7 @@ function Navbar() {
         </span>
 
         <div className="flex-grow text-right">
-          <button className="bg-green-500 hover:bg-green-400 px-5 py-2 font-bold rounded-md inline-flex items-center" onClick={() => {router.push('/new')}}>
+          <button className="bg-[#829bcf] hover:bg-[#828bcf] px-5 py-2 font-bold rounded-md inline-flex items-center" onClick={() => {router.push('/new')}}>
             <AiOutlinePlus className='mr-2'/>
               Add Task
           </button> {/* Aquí cambio de página sin refrescar de nuevo */}

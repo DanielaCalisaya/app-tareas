@@ -12,11 +12,11 @@ const Home = () => {
     <Layout>
       <div className="flex justify-center">
       { tasks.length === 0 ? (
-          <h2>No hay tareas...</h2>
+          <h2 className="font-bold">You don't have tasks</h2>/* className="font-mono" */
         ) : (  /* caja contenedora, contendrá todas las tareas */
           <div className="w-7/12">
             {tasks.map((task, indice) => (
-              <div className="bg-grey-700 hover:bg-gray-600 cursor-pointer px-20 py-5 m-2 flex justify-start item-center" 
+              <div className="bg-gray-800 hover:bg-gray-700 cursor-pointer px-20 py-5 m-2 flex justify-start item-center" 
               key={task.id}  
               onClick={() => push('/edit/' + task.id)}
               >
@@ -24,7 +24,7 @@ const Home = () => {
                 <div className="w-full">
                   <div className="flex justify-between">
                     <h2 className="font-bold">{task.title}</h2>
-                    <button className="bg-red-700 hover:bg-red-600 px-3 py-1 inline-flex items-center"
+                    <button className="bg-red-500 hover:bg-red-400 font-bold px-3 py-1 inline-flex items-center rounded-md"
                       onClick={(e) => {
                         e.stopPropagation();
                         deleteTask(task.id)
@@ -35,7 +35,6 @@ const Home = () => {
                     </button>
                   </div>       
                   <p className="text-gray-300">{task.description}</p>
-                  <span className="text-gray-400">{task.id}</span>
                 </div>
               </div>
             ))}

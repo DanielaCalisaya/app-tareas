@@ -46,8 +46,9 @@ const TaskFormPage = () => {
 
   return (
     <Layout>
-      <form onSubmit={handleSubmit}> 
-        <h1>{router.query.id ? "Update a Task" : "Create a Taks"}</h1>
+      <div className="flex justify-center items-center h-full">
+      <form onSubmit={handleSubmit} className="bg-gray-700 p-10 h-2/4"> 
+        <h1 className="text-3xl mb-7 font-bold">{router.query.id ? "Update a Task" : "Create a Taks"}</h1>
 
         <input 
           type="text" 
@@ -68,11 +69,13 @@ const TaskFormPage = () => {
           value={task.description}
         ></textarea>
 
-        <button className="bg-green-500 hover:bg-green-400 px-4 py-2 rounded-sm disabled:opacity-30" disabled={!task.title}>
+        <button className="bg-[#829bcf] hover:bg-[#828bcf] font-bold px-4 py-2 rounded-md" disabled={!task.title}> {/* disabled:opacity-90 */}
           Save
-        </button>{/* enabled:hover:border-gray-400 */}
+        </button>
 
-      </form>     
+      </form> 
+      </div>
+         
     </Layout>
   )
 }
