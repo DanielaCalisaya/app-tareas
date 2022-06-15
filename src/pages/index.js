@@ -1,10 +1,13 @@
 import { useTasks } from "../context/taskContext";
 import Layout from "../components/Layout";
 import { VscTrash } from 'react-icons/vsc';
+import { useRouter } from 'next/router'
 
 const Home = () => {
   
   const {tasks} = useTasks()
+  const {push} = useRouter()
+
   console.log(tasks);
 
   return (
@@ -16,7 +19,8 @@ const Home = () => {
           <div className="w-7/12">
             {tasks.map((task, indice) => (
               <div className="bg-grey-700 hover:bg-gray-600 cursor-pointer px-20 py-5 m-2 flex justify-start item-center" 
-                onClick={() => console.log(task.id)}
+              key={task.id}  
+              onClick={() => push('/edit/' + task.id)}
               >
                 <span className="text-5x1 mr-5">{indice}</span>
                 <div className="w-full">

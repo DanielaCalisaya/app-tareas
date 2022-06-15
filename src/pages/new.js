@@ -1,6 +1,6 @@
 import Layout from "../components/Layout"
 /* import { handleAddTaks } from '../utils/tasks'  */
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useTasks } from "../context/taskContext";
 import { useRouter } from 'next/router';
 
@@ -12,9 +12,10 @@ const TaskFormPage = () => {
     description:''
   });
 
-  const {createTask} = useTasks()
+  const { createTask, updateTask, tasks } = useTasks()
+  const router = useRouter()
 
-  const {push} = useRouter()
+  const { push, query } = useRouter()
 
   /* Captura el cambio que hay dentro del form */
   const handleChange = (e) => {
@@ -25,32 +26,49 @@ const TaskFormPage = () => {
   /* Función que se le pasará al form, capturará el evento crea la tarea y desp permite guardarla  */
   const handleSubmit = (e) => {
     e.preventDefault();
-    createTask(task.title, task.description)
-    push("/")
+
+    if(!query.id) {
+      createTask(task.title, task.description)
+    }else{
+      updateTask(query.id, task)
+    }
+    
+    push("/") 
   }
+
+  useEffect(() => {
+    if(router.query.id) {
+      const taskFound = tasks.find((task) => task.id === router.query.id)
+      if(taskFound)
+      setTaks({title: taskFound.title, description: taskFound.description})
+    }
+  },[router.query.id]);
 
   return (
     <Layout>
       <form onSubmit={handleSubmit}> 
-        <h1>Add tasks</h1>
+        <h1>{router.query.id ? "Update a Task" : "Create a Taks"}</h1>
 
         <input 
           type="text" 
-          name="title"
           placeholder="White a title" 
+          autoFocus
           className="bg-gray-800 focus:text-gray-100 focus:outline-none w-full py-3 px-4 mb-5"
-          onClick={handleChange}
+          name="title"
+          onChange={handleChange}
+          value={task.title}
         />
 
         <textarea 
-          name="description"
-          rows="2"
+          rows="2"/* cold="2" */
           placeholder="White a description"
           className="bg-gray-800 focus:text-gray-100 focus:outline-none w-full py-3 px-4 mb-5"
-          onClick={handleChange}
+          name="description"
+          onChange={handleChange}
+          value={task.description}
         ></textarea>
 
-        <button className="bg-green-500 hover:bg-green-400 px-4 py-2 rounded-sm enabled:hover:border-gray-400 disabled:opacity-30" disabled={!task.title}>
+        <button className="bg-green-500 hover:bg-green-400 px-4 py-2 rounded-sm disabled:opacity-30" disabled={!task.title}>
           Save
         </button>{/* enabled:hover:border-gray-400 */}
 
