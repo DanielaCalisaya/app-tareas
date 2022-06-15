@@ -7,16 +7,16 @@ export const useTasks = () => useContext(TaskContext)
 
 export const TasksProvider = ({children}) => {
 
-const [tasks, setTasks] = useState([
-    {id:'1', title:'first task', description: 'some task'},
-    {id:'2', title:'first task', description: 'some task'}   
-])
+    const [tasks, setTasks] = useState([
+        {id:'1', title:'first task', description: 'some task'},
+        {id:'2', title:'first task', description: 'some task'}   
+    ])
 
-/* creación de tarea */
-const createTask = (title, description) => {
-    setTasks([...tasks, {title, description, id: uuid()}
+    /* creación de tarea */
+    const createTask = (title, description) => {
+        setTasks([...tasks, {title, description, id: uuid()}
     ]) 
-}
+    }
     
     return ( /* pasa las tareas y crea...  */
         <TaskContext.Provider 

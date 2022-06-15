@@ -18,7 +18,7 @@ const TaskFormPage = () => {
 
   /* Captura el cambio que hay dentro del form */
   const handleChange = (e) => {
-    const {name,value} = e.target;
+    const {name, value} = e.target;
     setTaks({...task, [name] : value})
   }
 
