@@ -20,10 +20,13 @@ export const TasksProvider = ({children}) => {
     const updateTask = (id, updatedTask) => 
         setTasks([...tasks.map((task) => task.id === id ? {...task, ...updatedTask} : task)
     ]);
+
+    /* borrar tarea */
+    const deleteTask = (id) => setTasks([...tasks.filter((task) => task.id !== id)])
     
-    return ( /* pasa las tareas y crea...  */
+    return ( /* Pasamos todas las funciones */
         <TaskContext.Provider 
-            value={{tasks, createTask, updateTask}}>
+            value={{ tasks, createTask, updateTask, deleteTask }}>
             {children}
         </TaskContext.Provider>
 
