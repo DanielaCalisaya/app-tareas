@@ -3,6 +3,7 @@ import Layout from "../components/Layout"
 import { useEffect, useState } from "react";
 import { useTasks } from "../context/taskContext";
 import { useRouter } from 'next/router';
+import { useSession } from "next-auth/react"//
 
 const TaskFormPage = () => { 
 
@@ -13,7 +14,6 @@ const TaskFormPage = () => {
   });
 
   const { createTask, updateTask, tasks } = useTasks()
-  const router = useRouter()
 
   const { push, query } = useRouter()
 
@@ -37,18 +37,18 @@ const TaskFormPage = () => {
   }
 
   useEffect(() => {
-    if(router.query.id) {
-      const taskFound = tasks.find((task) => task.id === router.query.id)
+    if(query.id) {
+      const taskFound = tasks.find((task) => task.id === query.id)
       if(taskFound)
       setTaks({title: taskFound.title, description: taskFound.description})
     }
-  },[router.query.id]);
+  },[query.id]);
 
   return (
     <Layout>
       <div className="flex justify-center items-center h-full">
       <form onSubmit={handleSubmit} className="bg-gray-700 p-10 h-2/4"> 
-        <h1 className="text-3xl mb-7 font-bold">{router.query.id ? "Update a Task" : "Create a Taks"}</h1>
+        <h1 className="text-3xl mb-7 font-bold">{query.id ? "Update a Task" : "Create a Taks"}</h1>
 
         <input 
           type="text" 
@@ -61,7 +61,7 @@ const TaskFormPage = () => {
         />
 
         <textarea 
-          rows="2"/* cold="2" */
+          rows="2"
           placeholder="White a description"
           className="bg-gray-800 focus:text-gray-100 focus:outline-none w-full py-3 px-4 mb-5"
           name="description"

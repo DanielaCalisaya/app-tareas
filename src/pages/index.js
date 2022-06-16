@@ -1,12 +1,15 @@
 import { useTasks } from "../context/taskContext";
 import Layout from "../components/Layout";
 import { VscTrash } from 'react-icons/vsc';
-import { useRouter } from 'next/router'
+import { useRouter } from 'next/router';
+import { useSession } from "next-auth/react" 
+import { router } from 'next/router' 
 
 const Home = () => {
   
   const { tasks, deleteTask } = useTasks();
   const { push } = useRouter();
+  const { data: session } = useSession()
 
   return (
     <Layout>

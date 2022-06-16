@@ -1,12 +1,15 @@
 import '../styles/globals.css'
 import { TasksProvider } from '../context/taskContext'
+import { SessionProvider } from "next-auth/react"
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps: {session, ...pageProps}}) {
 
   return (
-    <TasksProvider>
-      <Component {...pageProps} />
-    </TasksProvider>
+    <SessionProvider session={session}>
+      <TasksProvider>
+        <Component {...pageProps} />
+      </TasksProvider>
+    </SessionProvider>
   )
 }
 
