@@ -17,7 +17,7 @@ const Layout = ({children}) => {
       <Navbar/>
       <hr/>
 
-      <main className="px-28 py-10">
+      <main className="px-28 py-10 bg-[#56425A]">
         {children}
       </main>
     </div>
