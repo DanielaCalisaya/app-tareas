@@ -1,7 +1,6 @@
 import React from 'react'
 import { AiOutlinePlus, AiOutlineUser } from 'react-icons/ai'
 import Link from 'next/link'
-import { log } from '../utils/tasks'//
 import { useTasks } from '../context/taskContext'
 import { router } from 'next/router'
 import { useSession } from "next-auth/react"
@@ -10,7 +9,7 @@ function Navbar() {
 
   const {tasks, setTasks} = useTasks()
   const { data: session } = useSession()
-  
+
   return (
     <header className="flex items-center bg-gray-800 px-28 py-5">
         <Link href="/">{/* href irá en Link no en a (logo) */}

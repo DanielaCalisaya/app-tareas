@@ -2,8 +2,8 @@ import { useTasks } from "../context/taskContext";
 import Layout from "../components/Layout";
 import { VscTrash } from 'react-icons/vsc';
 import { useRouter } from 'next/router';
-import { useSession } from "next-auth/react" 
-import { router } from 'next/router' 
+import { useSession } from "next-auth/react";
+import { router } from 'next/router';
 
 const Home = () => {
   
@@ -15,8 +15,8 @@ const Home = () => {
     <Layout>
       <div className="flex justify-center">
       { tasks.length === 0 ? (
-          <h2 className="font-bold">You don't have tasks</h2>/* className="font-mono" */
-        ) : (  /* caja contenedora, contendrá todas las tareas */
+          <h2 className="font-bold">You don't have tasks</h2> /* className="font-mono" */
+        ) : (  /* tasks container */
           <div className="w-7/12">
             {tasks.map((task, indice) => (
               <div className="bg-gray-800 hover:bg-gray-700 cursor-pointer px-20 py-5 m-2 flex justify-start item-center" 

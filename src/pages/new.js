@@ -1,9 +1,8 @@
-import Layout from "../components/Layout"
-/* import { handleAddTaks } from '../utils/tasks'  */
+import Layout from "../components/Layout";
 import { useEffect, useState } from "react";
 import { useTasks } from "../context/taskContext";
-import { useRouter } from 'next/router';
-import { useSession } from "next-auth/react"//
+import { Router, useRouter } from 'next/router';
+import { useSession } from "next-auth/react";
 
 const TaskFormPage = () => { 
 
@@ -16,6 +15,8 @@ const TaskFormPage = () => {
   const { createTask, updateTask, tasks } = useTasks()
 
   const { push, query } = useRouter()
+  
+  const { data: session } = useSession()
 
   /* Captura el cambio que hay dentro del form */
   const handleChange = (e) => {
@@ -32,7 +33,6 @@ const TaskFormPage = () => {
     }else{
       updateTask(query.id, task)
     }
-    
     push("/") 
   }
 
@@ -44,8 +44,13 @@ const TaskFormPage = () => {
     }
   },[query.id]);
 
-  return (
-    <Layout>
+  
+  useEffect(() => {
+   if(session === null){push('/api/auth/signin')} 
+  },[session]);
+
+  console.log(session);
+  return <Layout>
       <div className="flex justify-center items-center h-full">
       <form onSubmit={handleSubmit} className="bg-gray-700 p-10 h-2/4"> 
         <h1 className="text-3xl mb-7 font-bold">{query.id ? "Update a Task" : "Create a Taks"}</h1>
@@ -77,7 +82,7 @@ const TaskFormPage = () => {
       </div>
          
     </Layout>
-  )
+  
 }
 
 export default TaskFormPage
