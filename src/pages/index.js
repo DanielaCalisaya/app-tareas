@@ -15,7 +15,7 @@ const Home = () => {
     <Layout>
       <div className="flex justify-center">
       { tasks.length === 0 ? (
-          <h2 className="font-bold">You don't have tasks</h2> /* className="font-mono" */
+          <h2 className="font-bold">You don t have tasks</h2> /* className="font-mono" */
         ) : (  /* tasks container */
           <div className="w-7/12">
             {tasks.map((task, indice) => (
