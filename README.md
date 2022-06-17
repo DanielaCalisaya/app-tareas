@@ -1,10 +1,50 @@
-# App - Tareas
+# **App - Tareas**
+
+![Portada](public/todoList.png)
 
 ## Herramientas
 
-- Instalación Tailwind Css intregado a NextJs:
+- Next Js
 
-npm install -D tailwindcss postcss autoprefixer
+- Next auth (Login)
+
+- React
+
+- React icons
+
+- Yarn
+
+- Javascript
+
+- Tailwind Css intregado a NextJs (Styles)
+
+## Documentación
+
+- Next.Js https://nextjs.org/
+
+- NextAuth https://next-auth.js.org/
+
+- Yarn https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable
+
+- Tailwind https://tailwindcss.com/
+
+- React https://reactjs.org/
+
+- React icons https://react-icons.github.io/react-icons/
+
+## Ayuda memoria 
+
+- Crear app : npx create-next-app
+
+Correr : npm run dev
+
+- npm i next-auth
+
+Ruta login : http://localhost:3000/api/auth/signin
+
+Ruta logout : http://localhost:3000/api/auth/signout
+
+- npm install -D tailwindcss postcss autoprefixer
 
 npx tailwindcss init -p
 
@@ -21,26 +61,10 @@ Agregue las rutas de acceso a todos los archivos de plantilla del archivo.tailwi
 
 ctrl + k -> abre el buscador de tailwind
 
-- React icons
+- npm install react-icons --save
 
-npm install react-icons --save
+## Para correrlo necesitarás:
 
-## Documentación
+- npm intall
 
-Yarn https://classic.yarnpkg.com/lang/en/docs/install/#windows-stable
-
-Next.Js https://nextjs.org/
-
-https://tailwindcss.com/
-
-## Ayuda memoria 
-
-Crear app : npx create-next-app
-
-Correr : npm run dev
-
-Descarga libreria : npm i next-auth
-
-Ruta login : http://localhost:3000/api/auth/signin
-
-Ruta logout : http://localhost:3000/api/auth/signout
+- npm run dev
