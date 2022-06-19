@@ -18,6 +18,8 @@
 
 - Tailwind Css intregado a NextJs (Styles)
 
+- Cypress
+
 ## Documentación
 
 - Next.Js https://nextjs.org/
@@ -31,6 +33,8 @@
 - React https://reactjs.org/
 
 - React icons https://react-icons.github.io/react-icons/
+
+- https://www.cypress.io/
 
 ## Ayuda memoria 
 
@@ -62,6 +66,14 @@ Agregue las rutas de acceso a todos los archivos de plantilla del archivo.tailwi
 ctrl + k -> abre el buscador de tailwind
 
 - npm install react-icons --save
+
+- npm install cypress --save-dev
+
+En nuestros scripts del package.json agregar: "cypress:open": "cypress open"
+
+Abrir nuestro entorno gráfico de Cypress con ./node_modules/.bin/cypress open
+
+Para nuestros test, crear un archivo dentro de carpeta cypress/e2e/algun_nombre.cy.js
 
 ## Para correrlo necesitarás:
 
