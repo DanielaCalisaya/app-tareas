@@ -3,7 +3,7 @@ import Layout from "../components/Layout";
 import { VscTrash } from 'react-icons/vsc';
 import { useRouter } from 'next/router';
 import { useSession } from "next-auth/react";
-import { router } from 'next/router';
+/* import { router } from 'next/router'; */
 
 const Home = () => {
   

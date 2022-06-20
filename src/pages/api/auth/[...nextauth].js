@@ -8,8 +8,7 @@ export default NextAuth({
             clientId: process.env.GITHUB_ID,
             clientSecret: process.env.GITHUB_SECRET
         })
-    ],
-    secret: process.env.NEXTAUTH_SECRET
+    ]
 })
 
 /* la ruta api/auth/[...nextauth].js nos permite procesar cualquier ruta que venga después de api/auth ya sea facebook, email, etc */
