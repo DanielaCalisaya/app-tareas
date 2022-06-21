@@ -11,6 +11,7 @@ function Navbar() {
   const { data: session } = useSession()
 
   return (
+    
     <header className="flex items-center bg-gray-800 px-40 py-5">
         <Link href="/">{/* href irá en Link no en a (logo) */}
           <a>
@@ -29,27 +30,36 @@ function Navbar() {
             Add Task
         </button>
 
-          {
-            session ? (
-              <>
-              <button className="bg-[#829bcf] hover:bg-[#828bcf] px-3 py-2 font-bold rounded-md inline-flex items-center" onClick={() => {router.push('/api/auth/signout')}}>
-                <AiOutlineUser className='mr-2'/>
-                    Logout
-              </button>
-              </>
-            ) : (
-              <>
-              <button className="bg-[#829bcf] hover:bg-[#828bcf] px-3 py-2 font-bold rounded-md inline-flex items-center" onClick={() => {router.push('/api/auth/signin')}}>
-                <AiOutlineUser className='mr-2'/>
-                    Login
-              </button> 
-              </>
-            )
-          }
-
+        <button className="bg-[#829bcf] hover:bg-[#828bcf] px-3 py-2 font-bold rounded-md inline-flex items-center" onClick={() => {router.push('/api/auth/signout')}}>
+          <AiOutlineUser className='mr-2'/>
+            Logout
+        </button>
+         
         </div>
     </header>
   )
 }
 
 export default Navbar
+
+/* 
+
+{
+  session ? (
+    <>
+    <button className="bg-[#829bcf] hover:bg-[#828bcf] px-3 py-2 font-bold rounded-md inline-flex items-center" onClick={() => {router.push('/api/auth/signout')}}>
+      <AiOutlineUser className='mr-2'/>
+          Logout
+    </button>
+    </>
+  ) : (
+    <>
+    <button className="bg-[#829bcf] hover:bg-[#828bcf] px-3 py-2 font-bold rounded-md inline-flex items-center" onClick={() => {router.push('/api/auth/signin')}}>
+      <AiOutlineUser className='mr-2'/>
+          Login
+    </button> 
+    </>
+  )
+} 
+
+*/
